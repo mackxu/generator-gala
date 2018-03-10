@@ -1,0 +1,17 @@
+{
+  "name": "generator-gala",
+  "version": "1.0.1",
+  "description": "generator-gala",
+  "files": [
+    "generators"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["yeoman-generator"],
+  "author": "xuyadong",
+  "license": "ISC",
+  "dependencies": {
+    "yeoman-generator": "^2.0.3"
+  }
+}
