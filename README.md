@@ -18,6 +18,7 @@ componentname
 pagename    
  |---assets/     
  |---ui/     
+ |---index.html
  |---App.vue        
  |---main.js    
  |---utils.js   
