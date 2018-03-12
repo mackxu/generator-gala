@@ -8,6 +8,16 @@ module.exports = class extends Generator {
       required: true,
     });
   }
+  prompting() {
+    return this.prompt([{
+      type    : 'input',
+      name    : 'title',
+      message : 'Your page title:',
+      default : this.options.path
+    }]).then((answers) => {
+      this.pageTitle = answers.title;
+    });
+  }
   writing() {
     const path = this.options.path;
     this._createDir('ui');
@@ -21,7 +31,7 @@ module.exports = class extends Generator {
     this._createFile('test-api.js');
   }
   _writingHtml(path) {
-    this._copyTpl('index.html', `${path}/index.html`, { title: path });
+    this._copyTpl('index.html', `${path}/index.html`, { title: this.pageTitle });
   }
   _writingMain(path) {
     this._copyTpl('main.js', `${path}/main.js`);
