@@ -1,6 +1,9 @@
 import Vue from 'vue';
+import vmLog from 'plugins/log';
 import App from './App';
 // import './test-api';
+
+Vue.use(vmLog);
 
 new Vue({
   render: h => h(App),
