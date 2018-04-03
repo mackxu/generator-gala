@@ -1,6 +1,5 @@
 var Generator = require('yeoman-generator');
 var path = require('path');
-var fs = require('fs');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -12,9 +11,9 @@ module.exports = class extends Generator {
   }
   prompting() {
     const root = this.options.path;
-    this.pageName = root.split(path.sep).pop();
-    // 检查是否已经存在
-    if (fs.existsSync(path.resolve('./', root))) {
+    this.pageName = root.split(/(\\|\/)/).pop();
+    // 检查页面是否已经存在
+    if (this.fs.exists(path.resolve('./', root, 'main.js'))) {
       this.log(`${this.pageName} already exsits!!`);
       return;
     }
@@ -22,13 +21,14 @@ module.exports = class extends Generator {
       type    : 'input',
       name    : 'title',
       message : 'Your page title:',
-      default : 'Title',
+      default : this.pageName,
     }]).then((answers) => {
       this.pageTitle = answers.title;
     });
   }
   writing() {
     const root = this.options.path;
+    if (!this.pageTitle) return;
     
     this._createDir('ui');
     this._createDir('assets');
@@ -40,7 +40,7 @@ module.exports = class extends Generator {
     this._createFile('utils.js', '// pageUtils.js');
     this._createFile('config.js', '// pageConf.js');
     this._createFile('test-api.js', '// test api');
-    this._createFile('README.md', `#${this.pageName}`);
+    this._createFile('README.md', `# ${this.pageName}`);
   }
   _writingHtml(path) {
     this._copyTpl('index.html', `${path}/index.html`, { title: this.pageTitle });
