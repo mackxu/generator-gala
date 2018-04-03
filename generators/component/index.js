@@ -16,5 +16,6 @@ module.exports = class extends Generator {
       { cname }
     );
     this.fs.write(`${cname}/index.js`, `export { default } from './${this.options.cname}'`);
+    this.fs.write(`${cname}/README.md`, `#${cname}`);
   }
 };
