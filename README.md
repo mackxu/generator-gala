@@ -22,7 +22,9 @@ pagename
  |---App.vue        
  |---main.js    
  |---utils.js   
- |---test-api.js    
+ |---test-api.js
+ |---config.js
+ |---README.md    
 ```
 ## Help
 `yo --generators` List every installed generators
