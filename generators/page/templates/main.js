@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import vmLog from 'plugins/log';
 import App from './App';
-// import './test-api';
+// import './helper/test-api';
 
 Vue.use(vmLog);
 

@@ -17,13 +17,13 @@ componentname
 ```
 pagename    
  |---assets/     
- |---ui/     
+ |---ui/
+ |---helper/pageConf.js
+ |---helper/pageUtils.js
+ |---helper/test-api.js     
  |---index.html
  |---App.vue        
- |---main.js    
- |---utils.js   
- |---test-api.js
- |---config.js
+ |---main.js
  |---README.md    
 ```
 ## Help
