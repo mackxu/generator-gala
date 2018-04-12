@@ -4,6 +4,9 @@
 
 `npm install -g generator-gala`
 
+## Upgrade
+`npm install -g generator-gala`
+
 ## Start
 ### create component
 `yo gala:component ./path/componentname`    
