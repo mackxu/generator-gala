@@ -22,7 +22,7 @@ module.exports = class extends Generator {
       this.destinationPath(`${cpath}/${cname}.vue`),
       { cname }
     );
-    this.fs.write(`${cpath}/index.js`, `export { default } from './${cname}'`);
+    this.fs.write(`${cpath}/index.js`, `export { default } from './${cname}';`);
     this.fs.write(`${cpath}/README.md`, `# ${cname}`);
   }
 };
