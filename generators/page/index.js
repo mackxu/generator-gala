@@ -40,6 +40,7 @@ module.exports = class extends Generator {
     this._createFile('helper/pageUtils.js', '// pageUtils.js');
     this._createFile('helper/pageConf.js', '// pageConf.js');
     this._createFile('helper/test-api.js', '// test api');
+    this._createFile('helper/pingback.js', '// page pingback');
     this._createFile('README.md', `# ${this.pageName}`);
   }
   _writingHtml(path) {
